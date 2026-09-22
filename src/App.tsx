@@ -24,7 +24,29 @@ function App() {
     }
   }
   GetAdvice(slip_id);
-  return <></>;
+  return (
+    <>
+      <div className="bg-[hsl(217,19%,24%)] rounded-xl md:w-sm flex items-center justify-center flex-col p-4 mx-6">
+        <p className="text-[hsl(150,100%,66%)] text-center tracking-[0.25rem]">
+          Advice #{slip_id}
+        </p>
+        <p className="text-white py-2 px-4 text-center"> "{slip_advice}" </p>
+
+        <picture className="pt-4">
+          <source media="(min-width: 768)" srcSet={pattern_devider_desktop} />
+          <img src={pattern_devider_mobile} alt="pattern_devider_mobile" />
+        </picture>
+
+        <button
+          className="relative top-9 rounded-full bg-[hsl(150,100%,66%)] p-3 hover:shadow-[0_0_17px_hsl(150,100%,66%)]"
+          onClick={handleClick}
+          type="button"
+        >
+          <img src={icon_dice} alt="icon_dice" className="w-5 h-5" />
+        </button>
+      </div>
+    </>
+  );
 }
 
 export default App;
